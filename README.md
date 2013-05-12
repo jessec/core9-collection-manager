@@ -7,7 +7,12 @@ Build with :
 
 	mvn clean install
 	
-Note : tests will hang this is not a problem if you run the tests after the "mvn clean install" command.
+Note : 
+
+	Tests will hang this is not a problem if you run the tests after the "mvn clean install" command.
+
+	If you run from eclipse make sure the "surefire" process is killed after running maven.
+
 
 
 
