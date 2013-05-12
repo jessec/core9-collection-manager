@@ -1,0 +1,4 @@
+{
+	"main": "io.core9.collections.CollectionManagerPersistor",
+	"worker": true
+}

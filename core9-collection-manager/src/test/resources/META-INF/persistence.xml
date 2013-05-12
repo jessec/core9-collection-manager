@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<persistence xmlns="http://java.sun.com/xml/ns/persistence"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd"
+	version="2.0">
+
+	<persistence-unit name="primary">
+		<!-- Use Hibernate OGM provider: configuration will be transparent -->
+		<provider>org.hibernate.ogm.jpa.HibernateOgmPersistence</provider>
+		<properties>
+			<!-- property optional if you plan and use Infinispan, otherwise adjust 
+				to your favorite NoSQL Datastore provider. <property name="hibernate.ogm.datastore.provider" 
+				value="org.hibernate.ogm.datastore.infinispan.impl.InfinispanDatastoreProvider"/> -->
+			<property name="hibernate.ogm.datastore.provider"
+				value="org.hibernate.ogm.datastore.infinispan.impl.InfinispanDatastoreProvider" />
+			<property name="hibernate.ogm.infinispan.configuration_resourcename"
+				value="infinispan-ogm-config.xml" />
+
+
+			<!-- defines which JTA Transaction we plan to use -->
+			<!-- <property name="hibernate.transaction.jta.platform" value="org.hibernate.service.jta.platform.internal.JBossStandAloneJtaPlatform" 
+				/> -->
+
+			<!-- Properties for Hibernate Search -->
+			<property name="hibernate.search.default.directory_provider"
+				value="infinispan" />
+			<property name="hibernate.search.infinispan.configuration_resourcename"
+				value="infinispan.xml" />
+
+		</properties>
+	</persistence-unit>
+</persistence>
